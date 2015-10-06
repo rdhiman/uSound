@@ -1,0 +1,21 @@
+<div class="row marketing">
+    <input type="text" placeholder="Find you sounds..." ng-model="sound" />
+    <button ng-click="findSound()" type="button" class="btn btn-success">Find my sound</button>
+</div>
+
+<div class="row marketing">
+    <div class="col-lg-12">  
+        <div ng-repeat="sound in sounds">
+            <div  class="album-art" ng-style="{'background-image': 'url({{sound.artwork_url}})'}">
+                <div class="details" style="position: absolute; bottom: 0;" ng-class="{'playing':started}">
+                  <div class="track-info">
+                    <h1>{{sound.title}}</h1>
+                    <p>{{sound.band}}</p>
+                  </div>
+                  <a class="play" ng-click="play()" ng-class="{'ion-ios7-play': !playing, 'ion-ios7-pause': playing}"></a>
+                </div>
+            </div>
+        </div>
+
+    </div> 
+</div>
